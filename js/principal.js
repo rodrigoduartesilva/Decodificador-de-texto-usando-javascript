@@ -4,35 +4,40 @@ var btnCopiar = document.querySelector(".btn-copiar");
 var containerSaida = document.querySelector(".container-saida");
 var containerSaidaResultado = document.querySelector(".container-saida-resultado");
 
-
 /*Evento de Click para os botões de Criptografar, Descriptografar e Copiar*/
 
 btnCripto.addEventListener("click", function(){
     var textoDigitado = document.querySelector("#entrada-cripto").value;
     var paragrafo = document.createElement("p");
-    
-    paragrafo.textContent = criptografarTextoDigitado(textoDigitado);
-    containerSaida.style.display = "none";
-    containerSaidaResultado.style.display = "block";
-    containerSaidaResultado.appendChild(paragrafo);
+
+    if(textoDigitado != ""){
+        paragrafo.textContent = criptografarTextoDigitado(textoDigitado);
+        containerSaida.style.display = "none";
+        containerSaidaResultado.style.display = "block";
+        containerSaidaResultado.appendChild(paragrafo);
+    } else {
+        alert("Campo vazio - Digite um texto a ser criptografado!");
+    }
 });
 
 btnDescripto.addEventListener("click", function(){
     var textoDigitado = document.querySelector("#entrada-cripto").value;
     var paragrafo = document.createElement("p");
     
-    paragrafo.textContent = DescriptocriptografarTextoDigitado(textoDigitado);
-    containerSaida.style.display = "none";
-    containerSaidaResultado.style.display = "block";
-    containerSaidaResultado.appendChild(paragrafo);
+    if(textoDigitado != ""){
+        paragrafo.textContent = DescriptocriptografarTextoDigitado(textoDigitado);
+        containerSaida.style.display = "none";
+        containerSaidaResultado.style.display = "block";
+        containerSaidaResultado.appendChild(paragrafo);
+    } else {
+        alert("Campo vazio - Digite um texto a ser descriptografado!");
+    }
 });
 
 btnCopiar.addEventListener("click", function(){
     var campoResultado = document.querySelector(".container-saida-resultado").textContent;
-    campoResultado.execCommand("copy");
-    console.log(campoResultado);
+    navigator.clipboard.writeText(campoResultado);
 });
-
 
 
 /*------------------------------------------------------------------------*/

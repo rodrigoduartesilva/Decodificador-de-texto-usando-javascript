@@ -141,11 +141,23 @@ textarea:focus, input:focus, select:focus {
     margin-top: 16px;
 }
 
+.botao-criptografar:hover{
+    background: #1355a5;
+    border: 1px solid #1355a5;
+    font-style: italic;
+}
+
 .botao-descriptografar {
     background: #D8DFE8;
     border: 1px solid #0A3871;
     color: #0A3871;
     margin-left: 10px;
+}
+
+.botao-descriptografar:hover{
+    background: #9bbdec;
+    border: 1px solid #9bbdec;
+    font-style: italic;
 }
 
 .btn-copiar {
@@ -154,6 +166,12 @@ textarea:focus, input:focus, select:focus {
     margin: 10px auto;
     border: 1px solid #0A3871;
     color: #0A3871;
+}
+
+.btn-copiar:hover{
+    background: #9bbdec;
+    border: 1px solid #9bbdec;
+    font-style: italic;
 }
 
 /*--------------------------------------*/
