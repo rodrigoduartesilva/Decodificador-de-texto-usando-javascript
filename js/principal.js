@@ -3,6 +3,7 @@ var btnDescripto = document.querySelector(".botao-descriptografar");
 var btnCopiar = document.querySelector(".btn-copiar");
 var containerSaida = document.querySelector(".container-saida");
 var containerSaidaResultado = document.querySelector(".container-saida-resultado");
+var letrasAcentuadas = /[áàâãéèêíïóôõöúçñ]+/i;
 
 /*Evento de Click para os botões de Criptografar, Descriptografar e Copiar*/
 
@@ -10,8 +11,10 @@ btnCripto.addEventListener("click", function(){
     var textoDigitado = document.querySelector("#entrada-cripto").value;
     var paragrafo = document.createElement("p");
 
-    if(textoDigitado != ""){
-        paragrafo.textContent = criptografarTextoDigitado(textoDigitado);
+    if(letrasAcentuadas.test(textoDigitado)){
+        alert("Digitar apenas palavras sem acento!");
+    } else if(textoDigitado != ""){
+        paragrafo.textContent = criptografarTextoDigitado(textoDigitado.toLowerCase());
         containerSaida.style.display = "none";
         containerSaidaResultado.style.display = "block";
         containerSaidaResultado.appendChild(paragrafo);
@@ -24,8 +27,10 @@ btnDescripto.addEventListener("click", function(){
     var textoDigitado = document.querySelector("#entrada-cripto").value;
     var paragrafo = document.createElement("p");
     
-    if(textoDigitado != ""){
-        paragrafo.textContent = DescriptocriptografarTextoDigitado(textoDigitado);
+    if(letrasAcentuadas.test(textoDigitado)){
+        alert("Digitar apenas palavras sem acento!");
+    } else if(textoDigitado != ""){
+        paragrafo.textContent = DescriptocriptografarTextoDigitado(textoDigitado.toLowerCase());
         containerSaida.style.display = "none";
         containerSaidaResultado.style.display = "block";
         containerSaidaResultado.appendChild(paragrafo);
