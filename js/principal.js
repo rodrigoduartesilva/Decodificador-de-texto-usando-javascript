@@ -10,7 +10,7 @@ var letrasAcentuadas = /[áàâãéèêíïóôõöúçñ]+/i;
 btnCripto.addEventListener("click", function(){
     var textoDigitado = document.querySelector("#entrada-cripto").value;
     var paragrafo = document.createElement("p");
-
+    
     if(letrasAcentuadas.test(textoDigitado)){
         alert("Digitar apenas palavras sem acento!");
     } else if(textoDigitado != ""){

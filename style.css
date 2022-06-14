@@ -11,18 +11,9 @@ header img {
 main {
     background: #FFFFFF;
     width: 1000px;
-    height: 650px;
+    height: 550px;
     margin: 15px auto;
     position: relative;
-}
-
-footer {
-    background-color: #0A3871;
-    height: 70px;
-    padding: 20px;
-    font-weight: 400;
-    font-size: 20px;
-    color: #FFFFFF;
 }
 
 /*Conteúdo dos containers*/
